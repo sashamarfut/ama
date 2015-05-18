@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Models\User.cs" />

@@ -5,7 +5,7 @@ namespace DAL.Models
     {
         public int Id { get; set; }
         public string UserName { get; set; }
-        public string PasswordHash { get; }
-        public string SecurityStamp { get; }
+        public string PasswordHash { get; set; }
+        public string SecurityStamp { get; set; }
     }
 }
