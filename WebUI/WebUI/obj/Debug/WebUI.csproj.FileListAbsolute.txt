@@ -61,3 +61,5 @@ D:\ama\WebUI\WebUI\bin\System.Web.Http.Owin.xml
 D:\ama\WebUI\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
 D:\ama\WebUI\WebUI\obj\Debug\WebUI.dll
 D:\ama\WebUI\WebUI\obj\Debug\WebUI.pdb
+D:\ama\WebUI\WebUI\bin\DAL.dll
+D:\ama\WebUI\WebUI\bin\DAL.pdb
