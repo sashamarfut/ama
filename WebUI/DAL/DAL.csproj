@@ -63,13 +63,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseContext.cs" />
-    <Compile Include="MockContext.cs" />
-    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\AspNetRole.cs" />
     <Compile Include="Models\AspNetUser.cs" />
+    <Compile Include="Models\AspNetUserClaim.cs" />
+    <Compile Include="Models\AspNetUserLogin.cs" />
+    <Compile Include="AspNetWebContext.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Mapping\AspNetRoleMap.cs" />
+    <Compile Include="Models\Mapping\AspNetUserClaimMap.cs" />
+    <Compile Include="Models\Mapping\AspNetUserLoginMap.cs" />
+    <Compile Include="Models\Mapping\AspNetUserMap.cs" />
+    <Compile Include="Models\Mapping\CommentMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\UserMap.cs" />
+    <Compile Include="Models\Mapping\VideoMap.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Abstract\IRepository.cs" />
+    <Compile Include="Repository\Abstract\IVideoRepository.cs" />
+    <Compile Include="Repository\Abstract\ICommentRepository.cs" />
+    <Compile Include="Repository\Abstract\IUserRepository.cs" />
+    <Compile Include="Repository\Abstract\Repository.cs" />
+    <Compile Include="Repository\Concrete\UserRepository.cs" />
+    <Compile Include="Repository\Concrete\CommentRepository.cs" />
+    <Compile Include="Repository\Concrete\VideoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -95,6 +114,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

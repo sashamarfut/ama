@@ -17,7 +17,7 @@ namespace WebUI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer<DatabaseContext>(null);
+            //Database.SetInitializer<DatabaseContext>(null);
         }
     }
 }

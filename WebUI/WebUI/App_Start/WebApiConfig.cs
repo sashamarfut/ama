@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
-using Newtonsoft.Json.Serialization;
+using Microsoft.Practices.Unity;
+using DAL.Repository.Abstract;
+using DAL.Repository.Concrete;
+using WebUI.Infrastructure;
 
 namespace WebUI
 {
@@ -25,6 +24,13 @@ namespace WebUI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var container = new UnityContainer();
+            container.RegisterType<IVideoRepository, VideoRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IUserRepository, UserRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<ICommentRepository, CommentRepository>(new HierarchicalLifetimeManager());
+            config.DependencyResolver = new UnityResolver(container);
+
         }
     }
 }
