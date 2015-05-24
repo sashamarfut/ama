@@ -5,12 +5,14 @@ using System.Web;
 
 namespace WebUI.Models
 {
-    public class CommentModel
+    public class CommentViewModel
     {
-        public int Id { get; set; }
+        public int CommentId { get; set; }
         public string Text { get; set; }
         public DateTime CreatedDate { get; set; }
-        public UserModel User { get; set; }
-        public VideoModel Video { get; set; }
+
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string Photo { get; set; }
     }
 }

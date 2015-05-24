@@ -4,6 +4,10 @@ using Microsoft.Practices.Unity;
 using DAL.Repository.Abstract;
 using DAL.Repository.Concrete;
 using WebUI.Infrastructure;
+using WebUI.Mappers;
+using System.Collections.Generic;
+using DAL.Models;
+using WebUI.Models;
 
 namespace WebUI
 {
@@ -29,6 +33,8 @@ namespace WebUI
             container.RegisterType<IVideoRepository, VideoRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<IUserRepository, UserRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ICommentRepository, CommentRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IMapToNew<IEnumerable<Video>, IEnumerable<VideoViewModel>>, VideoViewModelMapper>(new HierarchicalLifetimeManager());
+            
             config.DependencyResolver = new UnityResolver(container);
 
         }
