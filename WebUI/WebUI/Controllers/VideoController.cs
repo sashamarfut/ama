@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using DAL.Models;
+﻿using DAL.Models;
 using DAL.Repository.Abstract;
 using System;
 using System.Collections.Generic;
