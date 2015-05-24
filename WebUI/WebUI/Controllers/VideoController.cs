@@ -18,11 +18,12 @@ namespace WebUI.Controllers
         {
             this.videoRepository = videoRepository;
         }
-
-        [Route("Videos")]
-        public IEnumerable<Video> GetVideos()
+                
+        public IEnumerable<Video> Get()
         {
-            return null;
+            List<Video> videos = videoRepository.GetEntities().ToList();
+
+            return videos;
         }
     }
 }
