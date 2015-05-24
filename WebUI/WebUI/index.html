@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="TodoApp" xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="videoApp" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
     <script src="Scripts/jquery-1.10.2.js"></script>
@@ -12,12 +12,11 @@
     <title></title>
 
     <style>
-
         #header {
-            border:1px solid #000;
+            border: 1px solid #000;
             width: 100%;
             height: 50px;
-            background-color:#e1e1e1;
+            background-color: #e1e1e1;
         }
 
         #top_leaders {
@@ -27,14 +26,11 @@
             background-color: #e1e1e1;
             margin-top: 5px;
         }
-
-        
-
     </style>
 
 </head>
 <body>
-    
+
     <div id="header">
 
     </div>
@@ -43,9 +39,28 @@
 
     </div>
 
-    <div id="content" ng-view>
-        
+    <div id="content" ng-controller="VideoListCtrl">
+
+        <ul>
+            <li ng-repeat="video in videos">
+                <p>{{video.VideoId}}</p>
+                <p>{{video.Title}}</p>
+                <p>{{video.Url}}</p>
+                <p>{{video.Views}}</p>
+                <p>{{video.Likes}}</p>
+
+
+                <p ng-repeat="comment in video.Comments">
+                    - {{comment.Text}}
+                    - {{comment.CreatedDate}}
+                </p>
+
+
+            </li>
+        </ul>
+
     </div>
-   
+
 </body>
 </html>
+

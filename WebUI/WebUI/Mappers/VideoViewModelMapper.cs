@@ -31,7 +31,6 @@ namespace WebUI.Mappers
                                       CommentId = comment.Id,
                                       CreatedDate = comment.CreatedDate,
                                       Text = comment.Text,
-
                                       UserId = comment.UserId,
                                       UserName = comment.User.AspNetUser.UserName,
                                       Photo = comment.User.Photo

@@ -1,12 +1,29 @@
-﻿var TodoApp = angular.module("TodoApp", ["ngRoute"]).
-    config(function ($routeProvider) {
-        $routeProvider.
-            when('/', { controller: ListCtrl, template: '<h2>{{test}}</h2>' }).
-            otherwise({ redirectTo: '/' });
+﻿var videoApp = angular.module('videoApp', []);
+
+
+videoApp.controller('VideoListCtrl', function ($scope, $http) {
+
+    $http.get('api/Video').success(function (data) {
+        $scope.videos = data;
     });
 
-var ListCtrl = function ($scope, $location) {
-    $scope.test = "Hello1";
-};
+});
+
+
+
+
+
+//var VideoApp = angular.module("VideoApp", ["ngRoute"]).
+//    config(function ($routeProvider) {
+//        $routeProvider.
+//            when('/', { controller: VideoList, template: '<h2>{{test}}</h2>' }).
+//            otherwise({ redirectTo: '/' });
+//    });
+
+
+//var VideoList = function ($scope, $location, $http) {
+    
+   
+//};
 
 
