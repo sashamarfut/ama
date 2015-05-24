@@ -11,6 +11,5 @@ namespace DAL.Repository.Concrete
 {
     public class VideoRepository : Repository<Video>, IVideoRepository
     {
-        string s = "ss";
     }
 }

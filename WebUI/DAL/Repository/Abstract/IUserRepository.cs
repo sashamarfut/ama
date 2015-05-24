@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repository.Abstract
 {
-    public interface IUserRepository 
+    public interface IUserRepository : IRepository<User>
     {
     }
 }

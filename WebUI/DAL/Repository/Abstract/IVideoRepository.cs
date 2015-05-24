@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repository.Abstract
 {
-    public interface IVideoRepository 
+    public interface IVideoRepository : IRepository<Video>
     {
     }
 }
