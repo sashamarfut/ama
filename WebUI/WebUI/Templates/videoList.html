@@ -1,0 +1,20 @@
+﻿
+<table border="1">
+    <tr ng-repeat ="video in videos">
+        <td>
+            <p>{{video.VideoId}}</p>
+            <p>{{video.Title}}</p>
+            <p>{{video.Url}}</p>
+            <p>{{video.Views}}</p>
+            <p>{{video.Likes}}</p>
+
+
+            <p ng-repeat="comment in video.Comments">
+                - {{comment.Text}}
+                - {{comment.CreatedDate}}
+            </p>
+        </td>
+    </tr>
+</table>
+
+

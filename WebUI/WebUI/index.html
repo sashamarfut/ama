@@ -12,55 +12,36 @@
     <title></title>
 
     <style>
-        #header {
-            border: 1px solid #000;
-            width: 100%;
-            height: 50px;
-            background-color: #e1e1e1;
+        .header {
+            background: #0080c0; /* Цвет фона шапки */
+            padding: 10px; /* Поля вокруг текста */
         }
 
-        #top_leaders {
-            border: 1px solid #000;
-            width: 100px;
-            height: 200px;
-            background-color: #e1e1e1;
-            margin-top: 5px;
+        .sidebar {
+            float: left; /* Обтекание справа */
+            border: 1px solid #333; /* Рамка левого меню */
+            width: 20%; /* Ширина левой колонки */
+            padding: 5px; /* Поля внутри блока */
+            margin: 10px 10px 20px 5px; /* Значения отступа от блока */
+        }
+
+        .content {
+            margin: 10px 5px 20px 25%; /* Значения отступа от левого блока */
+            padding: 5px; /* Поля внутри блока */
+            border: 1px solid #333; /* Рамка контента */
         }
     </style>
 
 </head>
 <body>
 
-    <div id="header">
-
+    <div class="header">site</div>
+    <div class="sidebar">
+        Sidebar
     </div>
-
-    <div id="top_leaders">
-
-    </div>
-
-    <div id="content" ng-controller="VideoListCtrl">
-
-        <ul>
-            <li ng-repeat="video in videos">
-                <p>{{video.VideoId}}</p>
-                <p>{{video.Title}}</p>
-                <p>{{video.Url}}</p>
-                <p>{{video.Views}}</p>
-                <p>{{video.Likes}}</p>
-
-
-                <p ng-repeat="comment in video.Comments">
-                    - {{comment.Text}}
-                    - {{comment.CreatedDate}}
-                </p>
-
-
-            </li>
-        </ul>
-
+    <div class="content">
+       <div ng-view></div>
     </div>
 
 </body>
 </html>
-
