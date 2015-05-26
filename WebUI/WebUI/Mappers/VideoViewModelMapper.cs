@@ -7,12 +7,12 @@ using WebUI.Models;
 
 namespace WebUI.Mappers
 {
-    public class VideoViewModelMapper : IMapToNew<IEnumerable<Video>, IEnumerable<VideoViewModel>>
+    public class VideoViewModelMapper : IMapToNew<IEnumerable<Video>, IEnumerable<VideoViewModelPreview>>
     {
-        public IEnumerable<VideoViewModel> Map(IEnumerable<Video> videos)
+        public IEnumerable<VideoViewModelPreview> Map(IEnumerable<Video> videos)
         {
             return from video in videos
-                   select new VideoViewModel()
+                   select new VideoViewModelPreview()
                    {
                        VideoId = video.Id,
                        Title = video.Title,
@@ -25,16 +25,7 @@ namespace WebUI.Mappers
                        UserId = video.UserId,
                        UserName = video.User.AspNetUser.UserName,
 
-                       Comments = (from comment in video.Comments
-                                  select new CommentViewModel()
-                                  {
-                                      CommentId = comment.Id,
-                                      CreatedDate = comment.CreatedDate,
-                                      Text = comment.Text,
-                                      UserId = comment.UserId,
-                                      UserName = comment.User.AspNetUser.UserName,
-                                      Photo = comment.User.Photo
-                                  }).ToList()
+                       CommentCount = video.Comments.Count
                    };
         }
     }

@@ -33,7 +33,7 @@ namespace WebUI
             container.RegisterType<IVideoRepository, VideoRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<IUserRepository, UserRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ICommentRepository, CommentRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IMapToNew<IEnumerable<Video>, IEnumerable<VideoViewModel>>, VideoViewModelMapper>(new HierarchicalLifetimeManager());
+            container.RegisterType<IMapToNew<IEnumerable<Video>, IEnumerable<VideoViewModelPreview>>, VideoViewModelMapper>(new HierarchicalLifetimeManager());
             
             config.DependencyResolver = new UnityResolver(container);
 

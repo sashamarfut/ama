@@ -15,19 +15,19 @@ namespace WebUI.Controllers
     public class VideoController : ApiController
     {
         IVideoRepository videoRepository = null;
-        IMapToNew<IEnumerable<Video>, IEnumerable<VideoViewModel>> videoMapper = null;
+        IMapToNew<IEnumerable<Video>, IEnumerable<VideoViewModelPreview>> videoMapper = null;
 
-        public VideoController(IVideoRepository videoRepository, 
-                               IMapToNew<IEnumerable<Video>, IEnumerable<VideoViewModel>> videoMapper)
+        public VideoController(IVideoRepository videoRepository,
+                               IMapToNew<IEnumerable<Video>, IEnumerable<VideoViewModelPreview>> videoMapper)
         {
             this.videoRepository = videoRepository;
             this.videoMapper = videoMapper;
         }
 
-        public IEnumerable<VideoViewModel> Get()
+        public IEnumerable<VideoViewModelPreview> Get()
         {
             IEnumerable<Video> video = videoRepository.GetEntities();
-            List<VideoViewModel> videoViewModes = videoMapper.Map(video).ToList();
+            List<VideoViewModelPreview> videoViewModes = videoMapper.Map(video).ToList();
             return videoViewModes;            
         }
     }

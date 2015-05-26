@@ -5,13 +5,8 @@ using System.Web;
 
 namespace WebUI.Models
 {
-    public class VideoViewModel
+    public abstract class VideoViewModelBase
     {
-        public VideoViewModel()
-        {
-            this.Comments = new List<CommentViewModel>();
-        }
-
         //Video
         public int VideoId { get; set; }
         public string Title { get; set; }
@@ -24,8 +19,5 @@ namespace WebUI.Models
         //User
         public int UserId { get; set; }
         public string UserName { get; set; }
-        
-        //Comments
-        public IEnumerable<CommentViewModel> Comments { get; set; }
     }
 }
