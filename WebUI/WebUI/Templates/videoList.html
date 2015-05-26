@@ -4,12 +4,13 @@
         <td>
             <!--<p>{{video.VideoId}}</p>-->
             <p><b>{{video.Title}}</b></p>
-            <p>{{video.Url}}</p>
-            Просмотры:<p>{{video.Views}}</p>
-            Понравилось: <p>{{video.Likes}}</p>
-            Комментариев: <p>{{video.CommentCount}}</p>
-
-           
+            <p> <img ng-src="{{video.Url}}" width="450" /> </p>                        
+            <p>Автор: {{video.UserName}}</p>
+            <p>Просмотры: {{video.Views}}</p>
+            <p>Понравилось: {{video.Likes}}</p>
+            <p>Комментариев: {{video.CommentCount}}</p>
+            <p>Опубликовано: {{video.CreatedDate}}</p>
+            
         </td>
     </tr>
 </table>
