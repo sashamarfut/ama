@@ -4,7 +4,7 @@
         <td>
             <!--<p>{{video.VideoId}}</p>-->
             <p><b>{{video.Title}}</b></p>
-            <p> <img ng-src="{{video.Url}}" width="450" /> </p>                        
+            <p> <img ng-src="{{video.Url}}" width="350" /> </p>                        
             <p>Автор: {{video.UserName}}</p>
             <p>Просмотры: {{video.Views}}</p>
             <p>Понравилось: {{video.Likes}}</p>
@@ -14,5 +14,7 @@
         </td>
     </tr>
 </table>
+
+<button ng-click="show_more()">Show more</button>
 
 

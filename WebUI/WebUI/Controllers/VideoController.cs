@@ -23,11 +23,21 @@ namespace WebUI.Controllers
             this.videoRepository = videoRepository;
             this.videoMapper = videoMapper;
         }
-
-        public IEnumerable<VideoViewModelPreview> Get()
+        
+        public IEnumerable<VideoViewModelPreview> Get(int? limit, int offset = 0)
         {
-            IEnumerable<Video> video = videoRepository.GetEntities();
-            List<VideoViewModelPreview> videoViewModes = videoMapper.Map(video).ToList();
+            IEnumerable<Video> video = videoRepository.GetEntities().ToList();//использовать оконные функции
+
+            if (offset > 0)
+            {
+                video = video.Skip(offset);
+            }
+            if (limit.HasValue)
+            {
+                video = video.Take(limit.Value);
+            }
+
+            List<VideoViewModelPreview> videoViewModes = videoMapper.Map(video.ToList()).ToList();
             return videoViewModes;            
         }
     }

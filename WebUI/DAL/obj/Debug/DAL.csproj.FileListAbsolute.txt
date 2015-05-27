@@ -5,5 +5,6 @@ D:\ama\WebUI\DAL\bin\Debug\EntityFramework.dll
 D:\ama\WebUI\DAL\bin\Debug\EntityFramework.SqlServer.dll
 D:\ama\WebUI\DAL\bin\Debug\EntityFramework.xml
 D:\ama\WebUI\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\ama\WebUI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\ama\WebUI\DAL\obj\Debug\DAL.dll
 D:\ama\WebUI\DAL\obj\Debug\DAL.pdb
