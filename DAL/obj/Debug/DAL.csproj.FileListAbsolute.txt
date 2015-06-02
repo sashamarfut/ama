@@ -1,0 +1,9 @@
+D:\ama\DAL\bin\Debug\DAL.dll.config
+D:\ama\DAL\bin\Debug\DAL.dll
+D:\ama\DAL\bin\Debug\DAL.pdb
+D:\ama\DAL\bin\Debug\EntityFramework.dll
+D:\ama\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\ama\DAL\bin\Debug\EntityFramework.xml
+D:\ama\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\ama\DAL\obj\Debug\DAL.dll
+D:\ama\DAL\obj\Debug\DAL.pdb

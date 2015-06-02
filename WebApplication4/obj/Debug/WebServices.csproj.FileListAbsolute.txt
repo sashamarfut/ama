@@ -1,0 +1,16 @@
+D:\ama\WebApplication4\obj\Debug\WebServices.csprojResolveAssemblyReference.cache
+D:\ama\WebApplication4\bin\WebService.dll.config
+D:\ama\WebApplication4\bin\WebService.dll
+D:\ama\WebApplication4\bin\WebService.pdb
+D:\ama\WebApplication4\bin\DAL.dll
+D:\ama\WebApplication4\bin\Microsoft.Practices.Unity.Configuration.dll
+D:\ama\WebApplication4\bin\Microsoft.Practices.Unity.dll
+D:\ama\WebApplication4\bin\Microsoft.Web.Infrastructure.dll
+D:\ama\WebApplication4\bin\Newtonsoft.Json.dll
+D:\ama\WebApplication4\bin\Unity.WebApi.dll
+D:\ama\WebApplication4\bin\DAL.pdb
+D:\ama\WebApplication4\bin\Microsoft.Practices.Unity.xml
+D:\ama\WebApplication4\bin\Microsoft.Practices.Unity.Configuration.xml
+D:\ama\WebApplication4\bin\Microsoft.Web.Infrastructure.xml
+D:\ama\WebApplication4\obj\Debug\WebService.dll
+D:\ama\WebApplication4\obj\Debug\WebService.pdb
