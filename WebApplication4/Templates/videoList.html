@@ -1,10 +1,14 @@
 ﻿
-<table border="1" width="100%">
+<div>
+    <button id="addVideoBtn" class="btn btn-success">добавить видео</button>
+</div>
+
+<table id="videoListTable">
     <tr ng-repeat ="video in videos">
         <td>
             <!--<p>{{video.VideoId}}</p>-->
             <p><b>{{video.Title}}</b></p>
-            <p> <img ng-src="{{video.Url}}" width="350" /> </p>                        
+            <p> <img ng-src="{{video.Url}}" width="450" /> </p>                        
             <p>Автор: {{video.UserName}}</p>
             <p>Просмотры: {{video.Views}}</p>
             <p>Понравилось: {{video.Likes}}</p>
