@@ -8,6 +8,7 @@
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-resource.js"></script>
     <script src="Scripts/app.js"></script>
+    <script src="Scripts/angular-local-storage.js"></script>
 
     <link rel="stylesheet" href="Content/bootstrap.min.css">
 
@@ -54,8 +55,16 @@
 </head>
 <body>
 
-    <div class="header">
-        <a href="#register" data-toggle="modal" class="btn btn-default pull-right">Регистрация / Вход</a>
+    <div class="header" ng-controller="indexController">
+
+        <a href="#register"
+           data-toggle="modal"
+           class="btn btn-default pull-right"
+           ng-show="{{authentication.isAuth == false}}">Регистрация / Вход</a>
+
+        <p class="pull-right well-sm"
+           ng-show="{{authentication.isAuth == true}}">{{authentication.userName}}</p>
+
     </div>
     <div class="sidebar">
         Sidebar
@@ -67,15 +76,15 @@
     <div class="modal fade" id="register" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <!--<div class="modal-header">
 
-                </div>
+                </div>-->
                 <div class="modal-body">
 
                     <div class="row">
                         <div class="col-md-6">
 
-                            <form class="form-horizontal" role="form" ng-controller="RegisterCtrl">
+                            <form class="form-horizontal" role="form" ng-controller="signupController">
                                 <div class="form-group">
                                     <div class="col-sm-10">
                                         <input class="form-control" id="name" placeholder="Ник" ng-model="formInfo.UserName">
@@ -93,31 +102,32 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Подтверждение пароля" ng-model=" forminfo.confirmpassword">
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Подтверждение пароля" ng-model="formInfo.ConfirmPassword">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-success" ng-click="register()">Зарегистрироваться</button>
+                                        <button type="submit" class="btn btn-success" ng-click="signUp()">Зарегистрироваться</button>
                                     </div>
+                                    {{message}}
                                 </div>
                             </form>
 
                         </div>
                         <div class="col-md-6">
 
-                            <form class="form-horizontal" role="form" ng-controller="LoginCtrl">
+                            <form class="form-horizontal" role="form" ng-controller="loginController">
 
                                 <p>Если вы уже зарегистрированы, тогда выполните вход.</p>
 
                                 <div class="form-group">
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="name" placeholder="Ник" ng-model="formInfo.UserName">
+                                        <input class="form-control" id="name" placeholder="Ник" ng-model="formInfo._UserName">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="password" placeholder="Пароль" ng-model="formInfo.Password">
+                                        <input type="password" class="form-control" id="password" placeholder="Пароль" ng-model="formInfo._Password">
                                     </div>
                                 </div>
                                 <div class="form-group">
