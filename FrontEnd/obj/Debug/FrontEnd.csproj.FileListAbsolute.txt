@@ -1,0 +1,4 @@
+D:\ama\FrontEnd\bin\Debug\FrontEnd.dll
+D:\ama\FrontEnd\bin\Debug\FrontEnd.pdb
+D:\ama\FrontEnd\obj\Debug\FrontEnd.dll
+D:\ama\FrontEnd\obj\Debug\FrontEnd.pdb
