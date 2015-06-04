@@ -11,13 +11,15 @@ var app = angular.module('videoApp', ['ngRoute', 'ngResource', 'LocalStorageModu
         //$locationProvider.html5mode(true);
     });
 
+app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptorService');
+});
+
 app.run(['authService', function (authService) {
     authService.fillAuthData();
 }]);
 
-app.config(function ($httpProvider) {
-    $httpProvider.interceptors.push('authInterceptorService');
-});
+
 
 //controllers
 app.controller('VideoListCtrl', function ($scope, $http, Video) {
