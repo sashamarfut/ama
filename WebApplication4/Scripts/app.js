@@ -127,6 +127,7 @@ app.factory('Video', function ($resource) {
 
 app.factory('authService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
 
+    var serviceBase = 'http://localhost:51919/';
     var authServiceFactory = {};
 
     var _authentication = {
@@ -137,7 +138,7 @@ app.factory('authService', ['$http', '$q', 'localStorageService', function ($htt
     var _saveRegistration = function (registration) {
         _logOut();
 
-        return $http.post('api/account/register', registration).then(function (response) {
+        return $http.post(serviceBase + 'api/account/register', registration).then(function (response) {
             return response;
         });
     };
