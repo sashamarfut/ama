@@ -11,13 +11,17 @@ var app = angular.module('videoApp', ['ngRoute', 'ngResource', 'LocalStorageModu
         //$locationProvider.html5mode(true);
     });
 
+app.run(['authService', function (authService) {
+    authService.fillAuthData();
+}]);
+
 app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
 
 //controllers
 app.controller('VideoListCtrl', function ($scope, $http, Video) {
-
+ 
     $scope.loadVideos = function () {
         Video.query({
             limit: $scope.limit,
@@ -79,8 +83,8 @@ app.controller('signupController', function ($scope, $location, $timeout, authSe
     //}
 });
 
-app.controller('loginController', function ($scope, $location, authService) {
-    
+app.controller('loginController', function ($scope, $location, authService, $window) {
+   
     $scope.message = "";
 
     $scope.login = function () {
@@ -91,7 +95,11 @@ app.controller('loginController', function ($scope, $location, authService) {
         };
 
         authService.login(data).then(function (response) {
-             $('#register').modal('toggle');
+                      
+            //$location.path('#/'); ????????????????????????????????????
+            $window.location.href = '/index.html'
+          
+                      
         },
          function (err) {
              $scope.message = err.error_description;
@@ -105,8 +113,7 @@ app.controller('indexController', function ($scope, $location, authService) {
         authService.logOut();
         $location.path('/');
     }
-
-    authService.fillAuthData();
+  
     $scope.authentication = authService.authentication;
 });
 
