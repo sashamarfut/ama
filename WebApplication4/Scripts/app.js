@@ -96,12 +96,8 @@ app.controller('loginController', function ($scope, $location, authService, $win
             password: $scope.formInfo._Password
         };
 
-        authService.login(data).then(function (response) {
-                      
-            //$location.path('#/'); ????????????????????????????????????
-            $window.location.href = '/index.html'
-          
-                      
+        authService.login(data).then(function (response) {                      
+            $("#register").modal('hide');
         },
          function (err) {
              $scope.message = err.error_description;
@@ -109,15 +105,16 @@ app.controller('loginController', function ($scope, $location, authService, $win
     };
 });
 
-app.controller('indexController', function ($scope, $location, authService) {
+app.controller('indexController', function ($scope, $location, $window, authService) {
 
     $scope.logOut = function () {
         authService.logOut();
-        $location.path('/');
     }
   
     $scope.authentication = authService.authentication;
 });
+
+
 
 
 //factories
@@ -220,77 +217,3 @@ app.factory('authInterceptorService', ['$q', '$location', 'localStorageService',
 
     return authInterceptorServiceFactory;
 }]);
-
-
-
-
-
-
-
-
-
-
-
-//app.controller("PostController", ["$scope", function ($scope) {
-//    $scope.posts = [
-//      { "title": "asdf", "description": "describe" },
-//      { "title": "second one", "description": "second describe" },
-//    ];
-//}]);
-
-//var videoServices = angular.module('videoApp', ['ngResource']);
-
-//videoServices.factory('Video', ['$resource',
-//  function ($resource) {
-//      return $resource('api/Video', {}, {
-//          query: { method: 'GET' }
-//      });
-//  }]);
-
-
-
-//var VideoListCtrl = function ($scope, $http) {
-
-//    $http.get('api/Video?limit=0&offset=0').success(function (data) {
-//        $scope.videos = data;
-//    });
-
-
-//    $scope.show_more = function () {
-//        $scope.offset += $scope.limit;
-//    }
-
-
-//};
-
-
-
-
-
-
-
-
-
-//.controller('RegisterCtrl', function ($scope) {
-
-//    $scope.register = function () {
-
-//        var data = {
-//            Email: $scope.formInfo.Email,
-//            UserName: $scope.formInfo.UserName,
-//            Password: $scope.formInfo.Password,
-//            ConfirmPassword: $scope.formInfo.ConfirmPassword,
-//        };
-
-//        $.ajax({
-//            type: 'POST',
-//            url: '/api/Account/Register',
-//            contentType: 'application/json; charset=utf-8',
-//            data: JSON.stringify(data)
-//        }).done(function (data) {
-//            self.result("Done!");
-//        }).fail(showError);
-
-//    };
-
-//}

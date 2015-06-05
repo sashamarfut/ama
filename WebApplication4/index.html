@@ -44,11 +44,19 @@
 
         #addVideoBtn {
             width: 80%;
-            font-size:18px;            
+            font-size: 18px;
         }
 
         #videoListTable {
-            margin-top:40px;
+            margin-top: 40px;
+        }
+
+        .loginText {
+            color: #ffffff;
+        }
+
+        .logOutLink {
+            color: #ffffff;
         }
     </style>
 
@@ -60,10 +68,14 @@
         <a href="#register"
            data-toggle="modal"
            class="btn btn-default pull-right"
-           ng-show="{{authentication.isAuth == false}}">Регистрация / Вход</a>
+           ng-show="!authentication.isAuth">Регистрация / Вход</a>
 
-        <p class="pull-right well-sm"
-           ng-show="{{authentication.isAuth == true}}">{{authentication.userName}}</p>
+        <p class="pull-right well-sm loginText"
+           ng-show="authentication.isAuth">
+            Привет, {{authentication.userName}}!
+
+            <button class="btn btn-link logOutLink" ng-click="logOut()">(Выйти)</button>
+        </p>
 
     </div>
     <div class="sidebar">
@@ -127,7 +139,7 @@
                                     </div>
                                 </div>
                             </div>
-                      
+
 
 
 
