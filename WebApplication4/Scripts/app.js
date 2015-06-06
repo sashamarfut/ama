@@ -22,7 +22,7 @@ app.run(['authService', function (authService) {
 
 
 //controllers
-app.controller('VideoListCtrl', function ($scope, $http, Video) {
+app.controller('VideoListCtrl', function ($scope, $http, Video, EditLike, authService) {
  
     $scope.loadVideos = function () {
         Video.query({
@@ -31,6 +31,20 @@ app.controller('VideoListCtrl', function ($scope, $http, Video) {
         },
         function (data) {
             $scope.videos = $scope.videos.concat(data);
+        });
+    }
+
+    $scope.editLike = function () {
+       
+        var id = this.video.VideoId;       
+        var likes = this;
+
+        EditLike.get({
+            videoId: id,
+            userId: 'userid'
+        },
+        function (data) {
+            likes.video.Likes = 1000;
         });
     }
 
@@ -121,6 +135,14 @@ app.controller('indexController', function ($scope, $location, $window, authServ
 app.factory('Video', function ($resource) {
     return $resource('api/Video', { query: { method: 'GET' } });
 });
+
+app.factory('EditLike', function ($resource) {
+    return $resource('api/Video/EditLike', { query: { method: 'GET' } });
+});
+
+
+
+
 
 app.factory('authService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
 

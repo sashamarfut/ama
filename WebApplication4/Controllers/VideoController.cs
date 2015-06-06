@@ -42,5 +42,14 @@ namespace WebUI.Controllers
             List<VideoViewModelPreview> videoViewModes = videoMapper.Map(video.ToList()).ToList();
             return videoViewModes;            
         }
+           
+        [HttpGet]  // USE PUT
+        [AllowAnonymous]
+        public HttpResponseMessage EditLike(int? videoId, string userId)
+        {
+            int like = 5;
+
+            return Request.CreateResponse<int>(HttpStatusCode.OK, like);
+        }
     }
 }

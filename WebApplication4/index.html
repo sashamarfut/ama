@@ -21,21 +21,22 @@
             background: #0080c0; /* Цвет фона шапки */
             padding: 10px; /* Поля вокруг rffтекста */
             height: 55px; /* FUCK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-        }
+                margin-bottom:25px;
+             }
 
         .sidebar {
             float: left; /* Обтекание справа */
-            border: 1px solid #333; /* Рамка левого меню */
+            border: 0px solid #333; /* Рамка левого меню */
             width: 20%; /* Ширина левой колонки */
             padding: 5px; /* Поля внутри блока */
             margin: 10px 10px 20px 5px; /* Значения отступа от блока */
         }
 
         .content {
-            margin: 10px 5px 20px 25%; /* Значения отступа от левого блока */
+            margin: 0 auto; /* Значения отступа от левого блока */
             padding: 5px; /* Поля внутри блока */
             border: 0px solid #333; /* Рамка контента */
-            width: 30%;
+            width: 600px;
         }
 
         input.ng-invalid {
@@ -78,9 +79,9 @@
         </p>
 
     </div>
-    <div class="sidebar">
+    <!--<div class="sidebar">
         Sidebar
-    </div>
+    </div>-->
     <div class="content">
         <div ng-view></div>
     </div>
@@ -124,9 +125,7 @@
                                     {{message}}
                                 </div>
                             </form>
-
-
-
+                            
 
                             <div class="form-group">
                                 <div class="row">
@@ -139,9 +138,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
 
 
                         </div>

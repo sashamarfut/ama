@@ -1,24 +1,30 @@
 ﻿
 <div>
-    <button id="addVideoBtn" class="btn btn-success">добавить видео</button>
+    <button id="addVideoBtn" class="btn btn-success" style="width:100%;">добавить видео</button>
 </div>
-
+ 
 <table id="videoListTable">
-    <tr ng-repeat ="video in videos">
+    <tr ng-repeat="video in videos">
         <td>
-            <!--<p>{{video.VideoId}}</p>-->
-            <p><b>{{video.Title}}</b></p>
-            <p> <img ng-src="{{video.Url}}" width="450" /> </p>                        
-            <p>Автор: {{video.UserName}}</p>
-            <p>Просмотры: {{video.Views}}</p>
-            <p>Понравилось: {{video.Likes}}</p>
-            <p>Комментариев: {{video.CommentCount}}</p>
-            <p>Опубликовано: {{video.CreatedDate}}</p>
+          
+            <p style="font-size:13px;"><b>{{video.UserName}}</b> поет песню <i>Григория Лепса - Лабиринт</i></p>
+            <p> <img ng-src="{{video.Url}}" width="100%" /> </p>
             
+            {{video.CreatedDate | date:'medium'}}
+
+            <div class="pull-right">
+                <img src="Content/Images/Comment.png" width="15" height="15"> {{video.CommentCount}} &nbsp;
+                <img src="Content/Images/eye.png" width="15" height="15">  {{video.Views}} &nbsp;
+                <a ng-click="editLike()"><img src="Content/Images/like.png" width="15" height="15">  {{video.Likes}}</a>
+            </div>
+
+            <br /><br />
         </td>
     </tr>
 </table>
 
-<button ng-click="show_more()">Show more</button>
-
+<br/>
+<p>
+    <button ng-click="show_more()">Show more</button>
+</p>
 
