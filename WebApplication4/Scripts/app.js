@@ -7,6 +7,11 @@ var app = angular.module('videoApp', ['ngRoute', 'ngResource', 'LocalStorageModu
                 controller: 'VideoListCtrl',
                 templateUrl: 'Templates/videoList.html'
             })
+            .when('/addVideo',
+            {
+                controller: 'AddVideoCtrl',
+                templateUrl: 'Templates/addVideo.html'
+            })
             .otherwise({ redirectTo: '/' });
         //$locationProvider.html5mode(true);
     });
@@ -133,6 +138,9 @@ app.controller('indexController', function ($scope, $location, $window, authServ
     $scope.authentication = authService.authentication;
 });
 
+app.controller('AddVideoCtrl', function ($scope) {
+    
+});
 
 
 
