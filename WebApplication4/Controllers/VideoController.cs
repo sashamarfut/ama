@@ -44,7 +44,6 @@ namespace WebUI.Controllers
         }
            
         [HttpGet]  // USE PUT
-        [AllowAnonymous]
         public HttpResponseMessage EditLike(int? videoId, string userId)
         {
             int like = 5;

@@ -35,17 +35,22 @@ app.controller('VideoListCtrl', function ($scope, $http, Video, EditLike, authSe
     }
 
     $scope.editLike = function () {
-       
-        var id = this.video.VideoId;       
-        var likes = this;
+        
+        if (!authService.authentication.isAuth) {
+            alert('Выполните регистрацию или вход');
+        }
+        else {
+          var id = this.video.VideoId;
+          var rowScope = this;
 
-        EditLike.get({
-            videoId: id,
-            userId: 'userid'
-        },
-        function (data) {
-            likes.video.Likes = 1000;
-        });
+          EditLike.get({
+              videoId: id,
+              userId: authService.authentication.userName
+          },
+          function (data) {
+              rowScope.video.Likes = 1000; //data 
+          });
+        }
     }
 
     $scope.show_more = function () {
@@ -229,7 +234,7 @@ app.factory('authInterceptorService', ['$q', '$location', 'localStorageService',
 
     var _responseError = function (rejection) {
         if (rejection.status === 401) {
-            alert('error');
+            alert('Вы не авторизированы выполнить это действие');
         }
         return $q.reject(rejection);
     }
@@ -239,3 +244,7 @@ app.factory('authInterceptorService', ['$q', '$location', 'localStorageService',
 
     return authInterceptorServiceFactory;
 }]);
+
+
+
+
